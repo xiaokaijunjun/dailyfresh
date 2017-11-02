@@ -81,7 +81,7 @@ def info(request):
     user = UserInfo.objects.get(id=request.session['user_id'])
     #最近浏览
     goods_ids=request.COOKIES.get('goods_ids','')
-    goods_ids1=goods_ids.split(',')[0:5]
+    goods_ids1=goods_ids.split(',')
     goods_list =[]
     for goods_id in goods_ids1:
         goods_list.append(GoodsInfo.objects.get(id=int(goods_id)))
